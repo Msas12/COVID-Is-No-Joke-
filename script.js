@@ -1,4 +1,33 @@
-//Start throwing some code in from previous activity for a starter
+var date = "2020-04-16"
+var city = "Chicago"
+var state = "Illinois"
+
+function searchCity(city, date, state) {
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://covid-19-statistics.p.rapidapi.com/reports?region_name=US&city_name=" + city + "&date=" + date + "&q=US%20" + state,
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "d7c407139dmsh3168e98d3071accp1df2d1jsncf860db85460",
+		"x-rapidapi-host": "covid-19-statistics.p.rapidapi.com"
+	}
+};
+
+
+
+
+$.ajax(settings).then(function (response) {
+
+    console.log(response);
+    
+
+
+});
+
+}
+
+searchCity(city, date, state)
 
 /*
 // Event listener for all button elements
