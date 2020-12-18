@@ -1,84 +1,109 @@
-var date = "2020-04-16"
-var city = "Chicago"
-var state = "Illinois"
+var covidURL = 'https://api.covidtracking.com/v1/us/current.json'
+$.ajax({
+  url: covidURL,
+  method: "GET"
+}).then(function(response){
+  var dailyUp = $('<h6>').text('Daily Death Increase: ' + response[0].deathIncrease)
+  var recovered = $('<h6>').text('Total Recovered Cases: ' + response[0].recovered)
+  var positive = $('<h6>').text('Total Positives: ' + response[0].positive)
+  var lastMod = $('<h6>').text('Last updated: ' + response[0].lastModified)
+  $('#tracker').append(dailyUp, recovered, positive, lastMod)
+})
 
-function searchCity(city, date, state) {
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://covid-19-statistics.p.rapidapi.com/reports?region_name=US&city_name=" + city + "&date=" + date + "&q=US%20" + state,
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "d7c407139dmsh3168e98d3071accp1df2d1jsncf860db85460",
-		"x-rapidapi-host": "covid-19-statistics.p.rapidapi.com"
-	}
-};
+//Blonde Joke
+function blondeJoke() {
+  // Sets Variables for blonde joke API
+  var queryURL = "https://api.jokes.one/jod?category=blonde&apiid=77bb87454dmsh74b81baa5edac7cp174c22jsn897e53317c87"
 
-
-
-
-$.ajax(settings).then(function (response) {
-
-    console.log(response);
-    
-
-
-});
-
-}
-
-searchCity(city, date, state)
-
-/*
-// Event listener for all button elements
-$("button").on("click", function() {
-  // In this case, the "this" keyword refers to the button that was clicked
-  var person = $(this).attr("data-person");
-
-  // Constructing a URL to search Giphy for the name of the person who said the quote
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    person + "&api_key=dc6zaTOxFJmzC&limit=10";
-
-  // Performing our AJAX GET request
+  // Calls blonde joke API
   $.ajax({
     url: queryURL,
     method: "GET"
+  }).then(function (response) {
+    console.log(response)
+
+    $('.blonde-title').text(response.contents.jokes[0].joke.title)
+    $('.blonde-content').text(response.contents.jokes[0].joke.text)
+
   })
-    // After the data comes back from the API
-    .then(function(response) {
-      // Storing an array of results in the results variable
-      var results = response.data;
+}
 
-      // Looping over every result item
-      for (var i = 0; i < results.length; i++) {
+// Event Listeners
+$('#blonde-button').on('click', function () {
+  blondeJoke()
+})
 
-        // Only taking action if the photo has an appropriate rating
-        if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-          // Creating a div for the gif
-          var gifDiv = $("<div>");
+//JOD Joke
+function blondeJoke() {
+  // Sets Variables for jod joke API
+  var queryURL = "https://api.jokes.one/jod?category=jod&apiid=77bb87454dmsh74b81baa5edac7cp174c22jsn897e53317c87"
 
-          // Storing the result item's rating
-          var rating = results[i].rating;
+  // Calls jod joke API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response)
 
-          // Creating a paragraph tag with the result item's rating
-          var p = $("<p>").text("Rating: " + rating);
+    $('.blonde-title').text(response.contents.jokes[0].joke.title)
+    $('.blonde-content').text(response.contents.jokes[0].joke.text)
 
-          // Creating an image tag
-          var personImage = $("<img>");
+  })
+}
 
-          // Giving the image tag an src attribute of a proprty pulled off the
-          // result item
-          personImage.attr("src", results[i].images.fixed_height.url);
+// Event Listeners
+$('#blonde-button').on('click', function () {
+  blondeJoke()
+})
 
-          // Appending the paragraph and personImage we created to the "gifDiv" div we created
-          gifDiv.append(p);
-          gifDiv.append(personImage);
+//Animal Joke
+function blondeJoke() {
+  // Sets Variables for animal joke API
+  var queryURL = "https://api.jokes.one/jod?category=blonde&apiid=77bb87454dmsh74b81baa5edac7cp174c22jsn897e53317c87"
 
-          // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-          $("#gifs-appear-here").prepend(gifDiv);
-        }
-      }
-    });
+  // Calls animal joke API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response)
+
+    $('.blonde-title').text(response.contents.jokes[0].joke.title)
+    $('.blonde-content').text(response.contents.jokes[0].joke.text)
+
+  })
+}
+
+// Event Listeners
+$('#blonde-button').on('click', function () {
+  blondeJoke()
+})
+
+//Knock Knock Joke
+function blondeJoke() {
+  // Sets Variables for knock knock joke API
+  var queryURL = "https://api.jokes.one/jod?category=blonde&apiid=77bb87454dmsh74b81baa5edac7cp174c22jsn897e53317c87"
+
+  // Calls knock knock joke API
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response)
+
+    $('.blonde-title').text(response.contents.jokes[0].joke.title)
+    $('.blonde-content').text(response.contents.jokes[0].joke.text)
+
+  })
+}
+
+// Event Listeners
+$('#blonde-button').on('click', function () {
+  blondeJoke()
+})
+
+
+
+$(document).ready(function () {
+  $('.modal').modal();
 });
-
-*/
