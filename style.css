@@ -16,11 +16,6 @@
     margin-bottom: 5px;
 }
 
-/* .search-button {
-    padding-left: 0;
-    margin-left: 0;
-
-} */
 
 .card-content {
     padding-left: 40px;
@@ -44,6 +39,14 @@
     padding: 40px;
 }
 
+.left {
+    padding-right: 15px;
+}
+
+.right {
+    padding-left: 15px;
+}
+
 #us-last-update {
     display: flex;
     flex-direction: columns;
@@ -61,4 +64,10 @@
     justify-content: right;
     bottom: 20px;
     right: 20px;
+}
+
+@media only screen and (max-width: 995px) {
+    .joke-button {
+        width: 100%;
+    }
 }
