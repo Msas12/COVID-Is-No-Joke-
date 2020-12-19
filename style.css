@@ -11,8 +11,54 @@
     padding: 0;
 }
 
+.list-group-item {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
 /* .search-button {
     padding-left: 0;
     margin-left: 0;
 
 } */
+
+.card-content {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+#tracker {
+    display: flex;
+    flex-direction: columns;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.middle {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    padding: 40px;
+}
+
+#us-last-update {
+    display: flex;
+    flex-direction: columns;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 20px;
+    justify-content: space-between;
+    color: #26a69a;
+    font-weight: bolder;
+    text-shadow: .5px .5px rgb(26, 24, 24)
+}
+
+.lastMod {
+    justify-content: right;
+    bottom: 20px;
+    right: 20px;
+}

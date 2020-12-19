@@ -32,25 +32,67 @@
         <div class="row">
 
           <!-- Serach Area-->
-            <asside class="col s12 m4 l3">  
+            <asside class="col s12 m12 l3">  
               <div class="row">
                 <div class="col s12">
                   <div class="card blue-grey darken-1">
                     <div class="card-content white-text">
                       <span class="card-title">Search for a State:</span>
                       <div class="wrapper align-center">
-                            <form>
-                              <div class="row valign-wrapper">
-                                <div class="col s10">
-                                  <div class="input-field">
-                                    <input id="search" type="search" placeholder="STATE INITIALS" required>
-                                  </div>
-                                </div>
-                                <div class="col s2 remove-padding">  
-                                  <button id ='searchbtn' class="btn waves-effect waves-light search-button" type="submit" name="action"><i class="material-icons right">search</i></button>
-                                </div>
-                              </div>
-                            </form>
+                          <!-- Dropdown Trigger -->
+                          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>State Search<i class="material-icons right">arrow_drop_down</i></a>
+                          <ul id="dropdown1" class="dropdown-content">
+                            <li><a href="#!" class="state-clicked">AL</a></li>
+                            <li><a href="#!" class="state-clicked">AK</a></li>
+                            <li><a href="#!" class="state-clicked">AZ</a></li>
+                            <li><a href="#!" class="state-clicked">AR</a></li>
+                            <li><a href="#!" class="state-clicked">CA</a></li>
+                            <li><a href="#!" class="state-clicked">CO</a></li>
+                            <li><a href="#!" class="state-clicked">CT</a></li>
+                            <li><a href="#!" class="state-clicked">DE</a></li>
+                            <li><a href="#!" class="state-clicked">FL</a></li>
+                            <li><a href="#!" class="state-clicked">GA</a></li>
+                            <li><a href="#!" class="state-clicked">HI</a></li>
+                            <li><a href="#!" class="state-clicked">IA</a></li>
+                            <li><a href="#!" class="state-clicked">ID</a></li>
+                            <li><a href="#!" class="state-clicked">IL</a></li>
+                            <li><a href="#!" class="state-clicked">IN</a></li>
+                            <li><a href="#!" class="state-clicked">KS</a></li>
+                            <li><a href="#!" class="state-clicked">KY</a></li>
+                            <li><a href="#!" class="state-clicked">MA</a></li>
+                            <li><a href="#!" class="state-clicked">MD</a></li>
+                            <li><a href="#!" class="state-clicked">ME</a></li>
+                            <li><a href="#!" class="state-clicked">MI</a></li>
+                            <li><a href="#!" class="state-clicked">MN</a></li>
+                            <li><a href="#!" class="state-clicked">MS</a></li>
+                            <li><a href="#!" class="state-clicked">MO</a></li>
+                            <li><a href="#!" class="state-clicked">MT</a></li>
+                            <li><a href="#!" class="state-clicked">NE</a></li>
+                            <li><a href="#!" class="state-clicked">NV</a></li>
+                            <li><a href="#!" class="state-clicked">NH</a></li>
+                            <li><a href="#!" class="state-clicked">NJ</a></li>
+                            <li><a href="#!" class="state-clicked">NM</a></li>
+                            <li><a href="#!" class="state-clicked">NY</a></li>
+                            <li><a href="#!" class="state-clicked">NC</a></li>
+                            <li><a href="#!" class="state-clicked">ND</a></li>
+                            <li><a href="#!" class="state-clicked">OH</a></li>
+                            <li><a href="#!" class="state-clicked">OK</a></li>
+                            <li><a href="#!" class="state-clicked">OR</a></li>
+                            <li><a href="#!" class="state-clicked">PA</a></li>
+                            <li><a href="#!" class="state-clicked">RI</a></li>
+                            <li><a href="#!" class="state-clicked">SC</a></li>
+                            <li><a href="#!" class="state-clicked">SD</a></li>
+                            <li><a href="#!" class="state-clicked">TN</a></li>
+                            <li><a href="#!" class="state-clicked">TX</a></li>
+                            <li><a href="#!" class="state-clicked">UT</a></li>
+                            <li><a href="#!" class="state-clicked">VT</a></li>
+                            <li><a href="#!" class="state-clicked">VA</a></li>
+                            <li><a href="#!" class="state-clicked">WA</a></li>
+                            <li><a href="#!" class="state-clicked">WV</a></li>
+                            <li><a href="#!" class="state-clicked">WI</a></li>
+                            <li><a href="#!" class="state-clicked">WY</a></li>
+                          </ul>
+
                             <!--Searches List-->
                             <div>
                               <ul class="list-group">
@@ -64,17 +106,17 @@
               </div>
             </asside>
       
-            <div class="col s12 m8 l9">
+            <div class="col s12 m12 l8">
               <!--Tracker Card-->
               <div class="row">
                 <div class="col s12 m12">
-                  <div class="card blue-grey darken-1">
+                  <div class="card blue-grey darken-1" id="tracker-content">
                     <div class="card-content white-text">
                       <span class="card-title"><h2>US COVID-19 Totals</h2></span>
                       <br>
                       <p id="tracker"></p>
                     </div>
-                    <div class="card-action">
+                    <div class="card-action" id="us-last-update">
                       <a target="_blank" href="https://covid.cdc.gov/covid-data-tracker/#cases_casesper100klast7days">CDC COVID Tracker</a>
                       <a target="_blank" href="https://coronavirus.jhu.edu/us-map">Johns Hopkins US COVID Map</a>
                     </div>

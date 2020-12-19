@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-var stateList = []
 
 //------------Current Stats------------------
 var covidURL = 'https://api.covidtracking.com/v1/us/current.json'
@@ -10,10 +9,14 @@ $.ajax({
 }).then(function(response){
   var fixedDate = moment(response[0].lastModified).format("M/D/YYYY")
   var dailyUp = $('<h6>').text('Daily Death Increase: ' + response[0].deathIncrease)
-  var recovered = $('<h6>').text('Total Recovered Cases: ' + response[0].recovered)
+  var recovered = $('<h6>').text('Total Recovered Cases: ' + response[0].recovered).addClass('middle')
   var positive = $('<h6>').text('Total Positives: ' + response[0].positive)
-  var lastMod = $('<h6>').text('Last updated: ' + fixedDate)
-  $('#tracker').append(dailyUp, recovered, positive, lastMod)
+  var lastMod = $('<p>').text('Last updated: ' + fixedDate).addClass('lastMod')
+  $('#tracker').append(dailyUp, recovered, positive)
+  $('#us-last-update').append(lastMod)
+
+  //Playing with commas
+ //dailyUp=parseInt().toLocaleString()
 })
 
 //-------------Search States----------------------------
@@ -152,27 +155,71 @@ function knockJoke() {
     jodJoke()
   })
 
-  // Search Button
-  $('#searchbtn').on('click', function(event){
-    // Preventing the button from trying to submit the form
-    event.preventDefault();
+  var stateList = []
 
-    // Variable to store user input
-    var userInput = $('#search').val().trim()
+  // State Dropdown Search
+  $(document).on('click', '.state-clicked', function(){
+    var listedState = $(this).text()
+
+    // Variable to store user search
     var stateButton = $('<button>').addClass("btn waves-effect waves-light list-group-item")
-    var addButton = stateButton.text(userInput)
+    var addButton = stateButton.text(listedState)
     $('.list-group').append(addButton)
-    
 
+    // Save search to local storage
+    stateList.push(listedState)
+    localStorage.setItem("states", JSON.stringify(stateList))
+    console.log(listedState)
+    
+    // Un-hides User Search Card
     $('#user-search-card').removeClass('hide')
 
-
-    userSearch(userInput)
+    // Calles userSearch Function
+    userSearch(listedState)
 
   })
 
-// Modal Listener
+// Pushes clicked saved item through searchCity Function to retrieve info on that city again
+$(document).on('click', '.list-group-item', function(){
+  var stateButtonListed = $(this).text()
+  console.log(stateButtonListed)
+
+    // Un-hides User Search Card
+    $('#user-search-card').removeClass('hide')
+  
+    // Calls userSearch Function
+    userSearch(stateButtonListed) 
+
+})
+
+// Pulls Local Storage on page load
+function getSavedStates() {
+  var savedStates = JSON.parse(localStorage.getItem("states"))
+
+  if (savedStates !== null) {
+    stateList = savedStates
+
+    // Display Saved Staes in list
+    for (var i=0; i<stateList.length; i++) {
+      var savedStateButton = $('<button>').addClass("btn waves-effect waves-light list-group-item")
+      var addSavedButton = savedStateButton.text(stateList[i])
+      $('.list-group').append(addSavedButton)
+
+      // Calls userSearch Function
+      userSearch(stateList[i]) 
+    }
+
+  }
+
+}
+
+// Calls getSavedStates on page load
+getSavedStates()
+
+// Materialize listeners
 $('.modal').modal();
+$('.dropdown-trigger').dropdown();
 
 
 });
+
