@@ -9,8 +9,12 @@ The following animation demonstrates the application functionality:
 ## User Story
 
 ```
-As a concerned citizen who cares about their family and friends in other states.  I want an application where I can check Covid Totals in their locations so that I can stay up to date on it, but also something that lifts my spirits from this constant depressing situation.
-
+As a concerned citizen who cares about their family and friends 
+in other states.  
+I want an application where I can check Covid Totals in their
+locations so that I can stay up to date on it, but also
+something that lifts my spirits from this constant depressing
+situation.
 ```
 
 
