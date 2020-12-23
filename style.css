@@ -1,3 +1,14 @@
+
+/* force the native select field to overlay the material select */
+body {
+    background-image: url(https://www.paho.org/sites/default/files/styles/flexslider_full/public/2020-10/covid-19-virus-1500x790.jpg?h=4ec59c0d&itok=SJs1_t01);
+}
+
+
+.dropdown-content{
+    transform: none !important;
+ }
+
 .search-button i {
     padding: 0;
     margin: 0;
@@ -33,6 +44,7 @@
     justify-content: space-between;
 }
 
+
 .middle {
     border-left: 1px solid;
     border-right: 1px solid;
@@ -55,9 +67,24 @@
     flex-grow: 1;
     padding: 20px;
     justify-content: space-between;
-    color: #26a69a;
+    color: rgb(79, 207, 192);
     font-weight: bolder;
     text-shadow: .5px .5px rgb(26, 24, 24)
+}
+#state-info {
+    justify-content: space-between;
+    font-weight: bolder;
+    text-shadow: .5px .5px rgb(26, 24, 24)
+}
+
+.card-title {
+    font-weight: bolder;
+    text-shadow: 1px 1px rgb(26, 24, 24)
+}
+
+.brand-logo {
+    font-weight: bolder;
+    text-shadow: 3px 3px rgb(145, 8, 8)
 }
 
 .lastMod {
@@ -65,6 +92,7 @@
     bottom: 20px;
     right: 20px;
 }
+
 
 @media only screen and (max-width: 995px) {
     .joke-button {
