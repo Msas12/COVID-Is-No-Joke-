@@ -1,7 +1,14 @@
+body,html {
+    height: 100%;
+}
 
-/* force the native select field to overlay the material select */
-body {
+.bg {
     background-image: url(https://www.paho.org/sites/default/files/styles/flexslider_full/public/2020-10/covid-19-virus-1500x790.jpg?h=4ec59c0d&itok=SJs1_t01);
+    
+    height: 175%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -94,8 +101,4 @@ body {
 }
 
 
-@media only screen and (max-width: 995px) {
-    .joke-button {
-        width: 100%;
-    }
-}
+
