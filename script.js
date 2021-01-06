@@ -112,10 +112,10 @@ $(document).ready(function () {
   }
 
 
-  //Animal Joke
-  function animalJoke() {
+  //Chuck Norris Fact
+  function chuckFact() {
     // Sets Variables for animal joke API
-    var queryURL = "https://api.jokes.one/jod?category=animal&apiid=77bb87454dmsh74b81baa5edac7cp174c22jsn897e53317c87"
+    var queryURL = "https://api.chucknorris.io/jokes/random"
 
     // Calls animal joke API
     $.ajax({
@@ -123,9 +123,10 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response)
+      console.log(response.updated_at)
 
-      $('.animal-title').text(response.contents.jokes[0].joke.title)
-      $('.animal-content').text(response.contents.jokes[0].joke.text)
+      $('.chuck-content').text(response.value)
+      $('.updated-on').html("Updated on: " + moment(response.updated_at).format("M/D/YYYY"))
 
     })
   }
@@ -158,8 +159,8 @@ $(document).ready(function () {
   $('#blonde-button').on('click', function () {
     blondeJoke()
   })
-  $('#animal-button').on('click', function () {
-    animalJoke()
+  $('#chuck-button').on('click', function () {
+    chuckFact()
   })
   $('#jod-button').on('click', function () {
     jodJoke()
