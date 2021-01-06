@@ -267,16 +267,5 @@ $(document).ready(function () {
   }
 
 
-      // // Adds clear all button ONLY if it's not already there
-      // if ($(".clear-button")) {
-      //   return;
-  
-      // }
-
-      // // Adds a Clear all button to the bottom of searched list
-      // var clearButton = $(`<a class="clear-button waves-effect waves-light btn"><i class="material-icons right">close</i>Clear All</a>`)
-      // clearButton.addClass("list-group-item")
-      // $('.list-group').after(clearButton)
-
 });
 
