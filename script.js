@@ -16,9 +16,9 @@ $(document).ready(function () {
     method: "GET"
   }).then(function (response) {
     var fixedDate = moment(response[0].lastModified).format("M/D/YYYY")
-    var dailyUp = $('<h6>').text('Daily Death Increase: ' + (response[0].deathIncrease.toLocaleString("en"))).addClass('left')
-    var recovered = $('<h6>').text('Total Recovered Cases: ' + (response[0].recovered.toLocaleString("en"))).addClass('middle')
-    var positive = $('<h6>').text('Total Positives: ' + (response[0].positive.toLocaleString("en"))).addClass('right')
+    var dailyUp = $('<h6>').text('Daily Death Increase: ' + (response[0].deathIncrease)).addClass('left')
+    var recovered = $('<h6>').text('Total Recovered Cases: ' + (response[0].recovered)).addClass('middle')
+    var positive = $('<h6>').text('Total Positives: ' + (response[0].positive)).addClass('right')
     var lastMod = $('<p>').text('Last updated: ' + fixedDate).addClass('lastMod')
     $('#tracker').append(dailyUp, recovered, positive)
     $('#us-last-update').append(lastMod)
