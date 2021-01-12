@@ -22,8 +22,6 @@ $(document).ready(function () {
     var lastMod = $('<p>').text('Last updated: ' + fixedDate).addClass('lastMod')
     $('#tracker').append(dailyUp, recovered, positive)
     $('#us-last-update').append(lastMod)
-
-
   })
 
 
@@ -263,7 +261,7 @@ $(document).ready(function () {
   function clearHistory(event) {
     event.preventDefault();
     stateList = [];
-    localStorage.removeItem("states");
+    localStorage.removeItem("cities");
     document.location.reload();
   }
 
