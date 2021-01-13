@@ -196,8 +196,8 @@ $(document).ready(function () {
 
     // Adds clear all button ONLY if it's not already there
     if ($('.list-group').children().length == 1) {
-      // Adds a Clear all button to the bottom of searched list
-    var clearButton = $(`<a class=" clear-button red darken-2 waves-effect waves-light btn"><i class="material-icons right">close</i>Clear All</a>`)
+    // Adds a Clear all button to the bottom of searched list
+    var clearButton = $(`<a class="clear-button red darken-2 waves-effect waves-light btn"><i class="material-icons right">close</i>Clear All</a>`)
     clearButton.addClass("list-group-item")
     $('.list-group').after(clearButton)
 
@@ -261,7 +261,7 @@ $(document).ready(function () {
   function clearHistory(event) {
     event.preventDefault();
     stateList = [];
-    localStorage.removeItem("cities");
+    localStorage.removeItem("states");
     document.location.reload();
   }
 
