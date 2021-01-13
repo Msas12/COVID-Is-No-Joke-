@@ -33,3 +33,6 @@ Must be interactive (i.e: accept and respond to user input)
 
 ## Link to website
 [COVID's No Joke App Link](https://msas12.github.io/COVID-Is-No-Joke-/)
+
+## Creator Contact Info
+Mike Sasiela: m5455y@gmail.com
