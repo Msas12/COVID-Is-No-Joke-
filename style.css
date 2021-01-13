@@ -6,15 +6,6 @@ html, body {
     background-size: cover;
   }
 
-/* .bg {
-    background-image: url(https://www.paho.org/sites/default/files/styles/flexslider_full/public/2020-10/covid-19-virus-1500x790.jpg?h=4ec59c0d&itok=SJs1_t01);
-    
-    height: 175%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 
 .dropdown-content{
     transform: none !important;
@@ -93,7 +84,7 @@ html, body {
     text-shadow: 1px 1px rgb(26, 24, 24)
 }
 
-.brand-logo {
+.logo {
     font-weight: bolder;
     text-shadow: 3px 3px rgb(145, 8, 8)
 }
@@ -103,6 +94,4 @@ html, body {
     bottom: 20px;
     right: 20px;
 }
-
-
 
